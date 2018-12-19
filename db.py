@@ -14,6 +14,7 @@ class Database:
             self.conn.autocommit = True
             self.cursor = self.conn.cursor(cursor_factory=RealDictCursor)
             print("connected")
+            self.create_tables()
         except (Exception, psycopg2.Error) as e:
             print(e)
 
