@@ -43,7 +43,16 @@ class Database:
             );"""
         self.cursor.execute(create_human_table)
         self.cursor.execute(create_simcard_table)
+        
+    def alter_phone_number_data_type(self):
+        self.cursor.execute("ALTER TABLE Simcard ALTER COLUMN phone_number big int;")
     
+    def add_country_column(self):        
+        self.cursor.execute("ALTER TABLE Simcard ADD Country VARCHAR(10) DEFAULT 'UGANDA';")
+        
+    def add_national_id(self):        
+        self.cursor.execute("ALTER TABLE Simcard ADD national_id VARCHAR(16);")
+        
 
     def add_a_human(self,name,address,age,single):
 
