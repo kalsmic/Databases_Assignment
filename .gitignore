@@ -1,0 +1,6 @@
+.pyc
+__pychache__
+.vscode
+.swp
+.idea
+venv
